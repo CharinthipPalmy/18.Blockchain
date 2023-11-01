@@ -14,21 +14,20 @@ Define a new Python data class named `Record`. Give this new class a formalized 
 
 2. Add the `@dataclass` decorator immediately before the `Record` class definition.
 
-3. Add an attribute named `sender` of type `str`.
-
-4. Add an attribute named `receiver` of type `str`.
-
-5. Add an attribute named `amount` of type `float`.
-
-Note that you’ll use this new `Record` class as the data type of your `record` attribute in the next section.
+# @dataclass
+# class Record:
+#     sender: str
+#     receiver: str
+#     amount: float
 
 ### Step 2: Modify the Existing Block Data Class to Store Record Data
 
-Rename the `data` attribute in your `Block` class to `record`, and then set it to use an instance of the new `Record` class that you created in the previous section. To do so, complete the following steps:
+# @dataclass
+# class Block:
 
-1. In the `Block` class, rename the `data` attribute to `record`.
-
-2. Set the data type of the `record` attribute to `Record`.
+#     # @TODO
+#     # Rename the `data` attribute to `record`, and set the data type to `Record`
+#     record: Record
 
 ### Step 3: Add Relevant User Inputs to the Streamlit Interface
 
@@ -38,11 +37,33 @@ Code additional input areas for the user interface of your Streamlit application
 
 2. Add an input area where you can get a value for `sender` from the user.
 
+# sender = st.text_input("Enter the sender's name:")
+
 3. Add an input area where you can get a value for `receiver` from the user.
+   
+# receiver = st.text_input("Enter the receiver's name:")
 
 4. Add an input area where you can get a value for `amount` from the user.
+   
+# amount = st.number_input("Enter the amount:", min_value=0.0)
 
 5. As part of the “Add Block” button functionality, update `new_block` so that `Block` consists of an attribute named `record`, which is set equal to a `Record` that contains the `sender`, `receiver`, and `amount` values. The updated `Block` should also include the attributes for `creator_id` and `prev_hash`.
+# if st.button("Add Block"):
+#     prev_block = pychain.chain[-1]
+#     prev_block_hash = prev_block.hash_block()
+
+#     # @TODO
+#     # Update `new_block` so that `Block` consists of an attribute named `record`
+#     # which is set equal to a `Record` that contains the `sender`, `receiver`,
+#     # and `amount` values
+#     new_block = Block(
+#         record=Record(sender=sender, receiver=receiver, amount=amount),
+#         creator_id=42,
+#         prev_hash=prev_block_hash
+#     )
+
+#     pychain.add_block(new_block)
+#     st.balloons()
 
 ### Step 4: Test the PyChain Ledger by Storing Records
 
