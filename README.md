@@ -14,20 +14,20 @@ Define a new Python data class named `Record`. Give this new class a formalized 
 
 2. Add the `@dataclass` decorator immediately before the `Record` class definition.
 
-# @dataclass
-# class Record:
-#     sender: str
-#     receiver: str
-#     amount: float
+### @dataclass
+### class Record:
+###     sender: str
+###     receiver: str
+###     amount: float
 
 ### Step 2: Modify the Existing Block Data Class to Store Record Data
 
-# @dataclass
-# class Block:
+### @dataclass
+### class Block:
 
-#     # @TODO
-#     # Rename the `data` attribute to `record`, and set the data type to `Record`
-#     record: Record
+###     # @TODO
+###     # Rename the `data` attribute to `record`, and set the data type to `Record`
+###     record: Record
 
 ### Step 3: Add Relevant User Inputs to the Streamlit Interface
 
@@ -37,33 +37,32 @@ Code additional input areas for the user interface of your Streamlit application
 
 2. Add an input area where you can get a value for `sender` from the user.
 
-# sender = st.text_input("Enter the sender's name:")
+### sender = st.text_input("Enter the sender's name:")
 
 3. Add an input area where you can get a value for `receiver` from the user.
    
-# receiver = st.text_input("Enter the receiver's name:")
+### receiver = st.text_input("Enter the receiver's name:")
 
 4. Add an input area where you can get a value for `amount` from the user.
    
-# amount = st.number_input("Enter the amount:", min_value=0.0)
+### amount = st.number_input("Enter the amount:", min_value=0.0)
 
 5. As part of the “Add Block” button functionality, update `new_block` so that `Block` consists of an attribute named `record`, which is set equal to a `Record` that contains the `sender`, `receiver`, and `amount` values. The updated `Block` should also include the attributes for `creator_id` and `prev_hash`.
-# if st.button("Add Block"):
-#     prev_block = pychain.chain[-1]
-#     prev_block_hash = prev_block.hash_block()
+### if st.button("Add Block"):
+###     prev_block = pychain.chain[-1]
+###     prev_block_hash = prev_block.hash_block()
 
-#     # @TODO
-#     # Update `new_block` so that `Block` consists of an attribute named `record`
-#     # which is set equal to a `Record` that contains the `sender`, `receiver`,
-#     # and `amount` values
-#     new_block = Block(
-#         record=Record(sender=sender, receiver=receiver, amount=amount),
-#         creator_id=42,
-#         prev_hash=prev_block_hash
-#     )
+###     # Update `new_block` so that `Block` consists of an attribute named `record`
+###     # which is set equal to a `Record` that contains the `sender`, `receiver`,
+###     # and `amount` values
+###     new_block = Block(
+###         record=Record(sender=sender, receiver=receiver, amount=amount),
+###         creator_id=42,
+###         prev_hash=prev_block_hash
+###     )
 
-#     pychain.add_block(new_block)
-#     st.balloons()
+###     pychain.add_block(new_block)
+###     st.balloons()
 
 ### Step 4: Test the PyChain Ledger by Storing Records
 
@@ -71,12 +70,12 @@ Test your complete `PyChain` ledger and user interface by running your Streamlit
 
 1. In the terminal, navigate to the project folder where you've coded this assignment.
 
-## (dev)18.Blockchain_hw % conda activate dev
-## (dev)18.Blockchain_hw % python pychain.py
+### (dev)18.Blockchain_hw % conda activate dev
+### (dev)18.Blockchain_hw % python pychain.py
 
 2. In the terminal, run the Streamlit application by using `streamlit run pychain.py`.
 
-## (dev)18.Blockchain_hw % streamlit run pychain.py 
+### (dev)18.Blockchain_hw % streamlit run pychain.py 
 
 3. Enter values for the sender, receiver, and amount, and then click the Add Block button. Do this several times to store several blocks in the ledger.
 
@@ -90,14 +89,6 @@ Test your complete `PyChain` ledger and user interface by running your Streamlit
 
 ![images](pics/Image2.jpg)
 
----
-## Submission
-
-You’ll upload the Python file for this assignment to your GitHub repository.
-
-* Make sure to update the `README.md` file to include an explanation of the Steamlit application, a screenshot or video of your deployed Streamlit application, and any other information that’s needed to interact with your project.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
 
 ---
 
