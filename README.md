@@ -14,11 +14,11 @@ Define a new Python data class named `Record`. Give this new class a formalized 
 
 2. Add the `@dataclass` decorator immediately before the `Record` class definition.
 
-### @dataclass
-### class Record:
-###     sender: str
-###     receiver: str
-###     amount: float
+ @dataclass
+ class Record:
+     sender: str
+     receiver: str
+     amount: float
 
 ### Step 2: Modify the Existing Block Data Class to Store Record Data
 
